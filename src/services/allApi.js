@@ -1,15 +1,17 @@
 import axiosConfig from "./axiosConfig";
+import { Baseurl } from "./baseUrl";
+
 
 export const createStudentData= async(reqBody)=>{
-    return await axiosConfig("post","http://localhost:3000/studentData",reqBody)
+    return await axiosConfig("post",`${Baseurl}/studentData`,reqBody)
 }
 
 export const getStudentData=async () => {
-    return await axiosConfig("get","http://localhost:3000/studentData","")
+    return await axiosConfig("get",`${Baseurl}/studentData`,"")
 }
 export const deleteStudentData=async (id) => {
-    return await axiosConfig("delete",`http://localhost:3000/studentData/${id}`,{})//commanly following method {} for delete
+    return await axiosConfig("delete",`${Baseurl}/studentData/${id}`,{})//commanly following method {} for delete
 }
 export const editStudentData=async (id,reqBody) => {
-    return await axiosConfig("put",`http://localhost:3000/studentData/${id}`,reqBody)
+    return await axiosConfig("put",`${Baseurl}/studentData/${id}`,reqBody)
 }
